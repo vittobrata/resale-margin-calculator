@@ -1,0 +1,36 @@
+:root{--bg:#f4f6fa;--card:#fff;--text:#1c2433;--muted:#5d6980;--primary:#7a3db8;--border:#e1e6ef;--danger:#b3261e;--ok:#17783a}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+.wrap{width:min(1040px,94%);margin:0 auto}
+.top{background:var(--primary);color:#fff;padding:1.6rem 0;margin-bottom:1.2rem}
+.top h1{margin:0 0 .3rem;font-size:1.6rem}
+.top p{margin:0;opacity:.92}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1rem}
+.panel{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.1rem;margin-bottom:1rem}
+.panel h2{margin:0 0 .8rem;font-size:1.15rem}
+.form{display:grid;gap:.7rem;margin-bottom:.8rem}
+label{display:grid;gap:.25rem;font-size:.9rem;color:var(--muted)}
+input,select,textarea{padding:.55rem .65rem;border:1px solid var(--border);border-radius:8px;font:inherit;color:var(--text);background:#fff;width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--primary);outline-offset:1px}
+textarea{resize:vertical;margin-bottom:.6rem}
+.btn{padding:.6rem 1rem;border:0;border-radius:9px;background:var(--primary);color:#fff;cursor:pointer;font:inherit;font-weight:600}
+.btn:hover{filter:brightness(1.1)}
+.btn.ghost{background:transparent;color:var(--primary);border:1px solid var(--border)}
+.error{color:var(--danger);min-height:1.2em;margin:0;font-size:.9rem}
+.ok{color:var(--ok);margin-left:.6rem;font-size:.9rem}
+.results{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem;margin:.4rem 0 .9rem}
+.res{border:1px solid var(--border);border-radius:10px;padding:.6rem .8rem}
+.res span{display:block;color:var(--muted);font-size:.82rem}
+.res strong{font-size:1.1rem}
+.res.main{grid-column:1/-1;background:#f3ebfb;border-color:#e0cff3}
+.res.main strong{font-size:1.5rem;color:var(--primary)}
+.pos{color:var(--ok)}
+.neg{color:var(--danger)}
+.row-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.6rem;margin-bottom:.6rem}
+.row-head h2{margin:0}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{text-align:left;padding:.55rem .6rem;border-bottom:1px solid var(--border);white-space:nowrap}
+th{color:var(--muted);font-weight:600}
+.empty{color:var(--muted);text-align:center;padding:1rem}
+.foot{padding:1.2rem 0 2rem;color:var(--muted);font-size:.9rem}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resale Margin Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <h1>Resale Margin Calculator</h1>
+      <p>Hitung harga jual, titik impas, dan laba untuk barang yang kamu jual ulang, lalu buat teks iklan siap salin.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="two">
+      <section class="panel">
+        <h2>Kalkulator Harga</h2>
+        <form id="calcForm" class="form" novalidate>
+          <label>Harga beli (Rp)<input id="buy" type="number" min="0" step="1000" value="5000000"></label>
+          <label>Biaya tambahan: servis, aksesori (Rp)<input id="extra" type="number" min="0" step="1000" value="150000"></label>
+          <label>Ongkir / biaya kirim (Rp)<input id="ship" type="number" min="0" step="1000" value="30000"></label>
+          <label>Potongan marketplace (%)<input id="fee" type="number" min="0" max="50" step="0.1" value="2"></label>
+          <label>Target margin (% dari harga jual)<input id="margin" type="number" min="0" max="80" step="0.5" value="10"></label>
+          <label>Harga jual yang kamu pasang (opsional, Rp)<input id="custom" type="number" min="0" step="1000" placeholder="kosongkan untuk memakai harga rekomendasi"></label>
+          <p id="calcError" class="error" role="alert"></p>
+        </form>
+
+        <div id="results" class="results" aria-live="polite"></div>
+        <button class="btn" id="saveBtn" type="button">Simpan ke Riwayat</button>
+      </section>
+
+      <section class="panel">
+        <h2>Generator Teks Iklan</h2>
+        <form id="adForm" class="form">
+          <label>Nama produk<input id="adName" value="iPhone 12 128GB"></label>
+          <label>Kondisi
+            <select id="adCond">
+              <option>Like new, mulus tanpa lecet</option>
+              <option selected>Bekas, kondisi terawat</option>
+              <option>Bekas, ada lecet pemakaian</option>
+              <option>Baru, segel</option>
+            </select>
+          </label>
+          <label>Spesifikasi / detail<input id="adSpec" value="Warna hitam, battery health 88%"></label>
+          <label>Kelengkapan<input id="adBox" value="Unit, kabel charger"></label>
+          <label>Garansi toko<input id="adWarranty" value="Garansi toko 7 hari"></label>
+        </form>
+        <textarea id="adOut" rows="9" readonly></textarea>
+        <button class="btn" id="copyBtn" type="button">Salin Teks</button>
+        <span id="copyMsg" class="ok" role="status"></span>
+      </section>
+    </div>
+
+    <section class="panel">
+      <div class="row-head">
+        <h2>Riwayat Perhitungan</h2>
+        <button class="btn ghost" id="clearBtn" type="button">Hapus Riwayat</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Waktu</th><th>Total biaya</th><th>Harga jual</th><th>Laba</th><th>Margin</th></tr></thead>
+          <tbody id="historyRows"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot wrap">Proyek portofolio: HTML, CSS, dan JavaScript tanpa framework. Angka contoh hanya ilustrasi.</footer>
+  <script src="script.js"></script>
+</body>
+</html>
